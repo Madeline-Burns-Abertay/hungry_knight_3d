@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
     {
         if (timerDush <= 0)
         {
-            transform.Translate(new Vector3(200, 0, 0) * speed * Time.deltaTime);
+            transform.Translate(new Vector3(0, 0, 200) * speed * Time.deltaTime);
             timerDush = couldownDush;
         }
     }
