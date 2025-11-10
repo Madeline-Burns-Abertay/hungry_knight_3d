@@ -18,16 +18,24 @@ public class Player : MonoBehaviour
     [SerializeField] private float couldown;
     [SerializeField] private float couldownDush;
 
-    [Header("Player UI Componets")]
-
-    [SerializeField] private Image hungryBar;
-    [SerializeField] private TMP_Text textHungry;
-
     private Rigidbody rb;
     private Animator animator;
     private Vector3 direction;
     private float timerCouldown, timerHungry, timerDush;
     private float horizontal, vertical;
+
+    [Header("Player UI Componets")]
+
+    [SerializeField] private Image hungryBar;
+    [SerializeField] private TMP_Text textHungry;
+
+    [Header("Player Attack Audio")]
+    public AudioSource sourseSword;
+    public AudioClip attackSword;
+
+    [Header("Player Movment Audio")]
+    public AudioSource soursePlayer;
+    public AudioClip Movment;
 
     void Start()
     {
@@ -80,6 +88,13 @@ public class Player : MonoBehaviour
 
         //Enable animation walk
         animator.SetBool("Walk", direction.magnitude > 0.1f);
+
+        //Eneble Audio walking
+        if (direction.magnitude > 0.1f)
+        {
+            soursePlayer.PlayOneShot(Movment, 0f);
+            soursePlayer.pitch = 0.95f;
+        }
     }
 
     public void Dash()
@@ -97,6 +112,7 @@ public class Player : MonoBehaviour
         speed = 0;
 
         animator.SetBool("Attack", true);
+        sourseSword.PlayOneShot(attackSword, 0.5f);
         yield return new WaitForSeconds(0.6f);
         animator.SetBool("Attack", false);
         timerCouldown = couldown;
