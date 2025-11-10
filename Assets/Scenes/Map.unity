@@ -1532,7 +1532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4572077342032327210, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
       propertyPath: hungry
-      value: 5000
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4572077342032327210, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
       propertyPath: Movment
@@ -1540,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 84a1a5e933f9a634aa84c89654a8c86e, type: 3}
     - target: {fileID: 4572077342032327210, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
       propertyPath: couldown
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572077342032327210, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
       propertyPath: hungryBar
@@ -1564,7 +1564,7 @@ PrefabInstance:
       objectReference: {fileID: 8422892626804600312}
     - target: {fileID: 4572077342032327210, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
       propertyPath: hungryAwayTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
