@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
         Instantiate(Food[Random.Range(0, Food.Count)], transform.position + (Vector3.up * 0.1f), Quaternion.identity);
         Anim.SetBool("dead", true);
         yield return new WaitForSeconds(0.75f);
+        GameObject.Find("Player/enemySpawner").GetComponent<SpawnEnemies>().KillEnemy();
         Destroy(gameObject);
     }
 }

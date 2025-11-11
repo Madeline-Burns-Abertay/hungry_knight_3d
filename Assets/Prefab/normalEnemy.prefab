@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b416a6e948c4805429c8479d5d87b8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food:
+  Food:
   - {fileID: 4052074777656384198, guid: 6c457f9a161f20d4aa42b47baeb4dd7f, type: 3}
   - {fileID: 3172088104373417747, guid: 5d5ded8852c0fee4d933ebef82152837, type: 3}
   - {fileID: 1616916193689282585, guid: 19742aed3c09abc45818d1a6dd699afe, type: 3}
@@ -127,6 +127,7 @@ MonoBehaviour:
   - {fileID: 1436722643344840866, guid: f1823d5ced3afe6448ce617e29024360, type: 3}
   - {fileID: 600736243086971889, guid: b83c99705b1624b499512e5c84dc2a23, type: 3}
   - {fileID: 2612215936499655834, guid: 3bdd5693a1a97334584f5f6bf96e7fd0, type: 3}
+  speed: 0.5
 --- !u!136 &5102104363222329533
 CapsuleCollider:
   m_ObjectHideFlags: 0

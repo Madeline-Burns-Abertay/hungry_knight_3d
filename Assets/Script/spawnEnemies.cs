@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class spawnEnemies : MonoBehaviour
+public class SpawnEnemies : MonoBehaviour
 {
     int enemyCount = 0;
     [SerializeField] int MAX_ENEMY_COUNT = 500;
@@ -23,5 +23,10 @@ public class spawnEnemies : MonoBehaviour
             Instantiate(enemy, position, Quaternion.identity);
             enemyCount++;
         }
+    }
+
+    public void KillEnemy()
+    {
+        enemyCount--;
     }
 }
