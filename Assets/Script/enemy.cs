@@ -36,7 +36,6 @@ public class enemy : MonoBehaviour
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
-        Debug.Log("Is patrolling? " + isPatrolling.ToString() + "; Distance: " + Vector3.Distance(transform.position, destination) + "; Direction: " + transform.rotation);
     }
 
     void OnTriggerEnter(Collider other)
