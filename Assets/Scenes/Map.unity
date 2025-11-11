@@ -393,6 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dbae9cc1ea60f4ea759149dda23d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_ENEMY_COUNT: 500
+  spawnRadius: 100
   enemy: {fileID: 2690877149229814589, guid: 491378a99fffcab43a5a49b08e81b993, type: 3}
 --- !u!4 &463986276
 Transform:
@@ -402,12 +404,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463986274}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8422892626795495960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509723086
 GameObject:
@@ -1601,7 +1603,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2466210098243580584, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 463986276}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1556498200586415462, guid: f5d7af71a4187a34d8a6a72d29dfee84, type: 3}
       insertIndex: -1
@@ -1739,4 +1744,3 @@ SceneRoots:
   - {fileID: 6233791971768640958}
   - {fileID: 842673766}
   - {fileID: 509723089}
-  - {fileID: 463986276}

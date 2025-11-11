@@ -2,35 +2,35 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    [SerializeField] List<GameObject> food;
-    Animator anim;
-    bool isPatrolling;
-    float patrolRadius = 6f;
-    Vector3 destination;
-    const float epsilon = 0.01f;
+    [SerializeField] List<GameObject> Food;
+    Animator Anim;
+    bool IsPatrolling;
+    float PatrolRadius = 6f;
+    Vector3 Target;
+    const float EPSILON = 0.01f;
     [SerializeField] float speed = 0.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        anim = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isPatrolling)
+        if (!IsPatrolling)
         {
-            Vector2 randomPoint = Random.insideUnitCircle * patrolRadius; // pick a point, any point
-            destination = new Vector3(transform.position.x + randomPoint.x, 0, transform.position.z + randomPoint.y); // turn that point into a point in the game world
+            Vector2 randomPoint = Random.insideUnitCircle * PatrolRadius; // pick a point, any point
+            Target = new Vector3(transform.position.x + randomPoint.x, 0, transform.position.z + randomPoint.y); // turn that point into a point in the game world
             //Debug.Log(destination);
-            transform.LookAt(destination);
-            isPatrolling = true; // set off
+            transform.LookAt(Target);
+            IsPatrolling = true; // set off
         }
-        if (Vector3.Distance(transform.position, destination) <= epsilon)
+        if (Vector3.Distance(transform.position, Target) <= EPSILON)
         {
-            isPatrolling = false; // stop
+            IsPatrolling = false; // stop
         }
         else
         {
@@ -54,8 +54,8 @@ public class enemy : MonoBehaviour
 
     IEnumerator die()
     {
-        Instantiate(food[Random.Range(0, food.Count)], transform.position + (Vector3.up * 0.1f), Quaternion.identity);
-        anim.SetBool("dead", true);
+        Instantiate(Food[Random.Range(0, Food.Count)], transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+        Anim.SetBool("dead", true);
         yield return new WaitForSeconds(0.75f);
         Destroy(gameObject);
     }

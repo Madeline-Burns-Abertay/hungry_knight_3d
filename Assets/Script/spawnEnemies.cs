@@ -3,22 +3,25 @@ using UnityEngine;
 public class spawnEnemies : MonoBehaviour
 {
     int enemyCount = 0;
-    [SerializeField] const int MAX_ENEMY_COUNT = 5000;
+    [SerializeField] int MAX_ENEMY_COUNT = 500;
+    [SerializeField] float spawnRadius = 50f;
     public GameObject enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        while (enemyCount < MAX_ENEMY_COUNT)
-        {
-            Vector3 position = new Vector3(Random.Range(0, 1000), 0, Random.Range(0, 1000));
-            Instantiate(enemy, position, Quaternion.identity);
-            enemyCount++;
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        while (enemyCount < MAX_ENEMY_COUNT)
+        {
+            Vector3 playerPos = transform.parent.transform.position;
+            Vector2 randomPoint = Random.insideUnitCircle * spawnRadius;
+            Vector3 position = new Vector3(playerPos.x + randomPoint.x, 0, playerPos.z + randomPoint.y);
+            Instantiate(enemy, position, Quaternion.identity);
+            enemyCount++;
+        }
     }
 }
