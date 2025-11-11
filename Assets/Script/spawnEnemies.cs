@@ -29,4 +29,10 @@ public class SpawnEnemies : MonoBehaviour
     {
         enemyCount--;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, spawnRadius);
+    }
 }
