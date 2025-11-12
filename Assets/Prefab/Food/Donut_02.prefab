@@ -146,8 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7424348387d2244aee8c1cf12bedc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heathPoints: 2
-  hungryUpPoints: 5
+  hungryUpPoints: 7
   source: {fileID: 5218883013404630592}
   pickUpSound: {fileID: 8300000, guid: 0aa3e6563e0a78a4f885003cc7171cc3, type: 3}
 --- !u!82 &5218883013404630592

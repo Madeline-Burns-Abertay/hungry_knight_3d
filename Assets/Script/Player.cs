@@ -50,7 +50,12 @@ public class Player : MonoBehaviour
         MovmentPlaye();
         UpdateCharacteristic();
         TakeAwayHungry();
-        DieCheckingOrHungryNull();
+        //Check if hungry less 0
+        if (hungry <= 0)
+        {
+            StartCoroutine(DieCheckingOrHungryNull());
+        }
+        
 
         // Timer for the could down
         timerCouldown -= Time.deltaTime;
@@ -132,8 +137,12 @@ public class Player : MonoBehaviour
 
     }
     public void TakeDownhungry(int damage) 
-    { 
+    {
         hungry -= damage;
+        if (hungry <= 0)
+        {
+            hungry = 0;
+        }
     }
     public void TakeAwayHungry()
     {
@@ -146,11 +155,10 @@ public class Player : MonoBehaviour
         
     }
 
-    public void DieCheckingOrHungryNull()
+    IEnumerator DieCheckingOrHungryNull()
     {
-        if (hungry <= 0)
-        {
-            SceneManager.LoadScene(0);
-        }
+        animator.SetBool("Die", true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(1);
     }
 }

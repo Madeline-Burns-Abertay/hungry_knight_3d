@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Item : MonoBehaviour
 {
-    public int heathPoints = 2;
     public int hungryUpPoints = 5;
 
     public AudioSource source;

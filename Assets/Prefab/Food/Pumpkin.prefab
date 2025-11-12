@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heathPoints: 2
-  hungryUpPoints: 5
+  hungryUpPoints: 10
   source: {fileID: 7704960358532891196}
   pickUpSound: {fileID: 8300000, guid: 0aa3e6563e0a78a4f885003cc7171cc3, type: 3}
 --- !u!82 &7704960358532891196
